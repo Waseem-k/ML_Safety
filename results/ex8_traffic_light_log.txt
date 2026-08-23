@@ -1,0 +1,26 @@
+Device     : cpu
+Test split : D:\ML Safety\2026\test\test
+Models dir : D:\ML Safety\ML_Safety\models
+
+Using 3,600 test images
+
+============================================================
+Model: has_traffic_light
+============================================================
+  Generating adversarial example visualisations ...
+  Saved: D:\ML Safety\ML_Safety\models\ex8_fgsm_has_traffic_light.png
+
+  Recall on positive class (label = 1):
+    ε = 0.01  |  Clean recall = 0.9807  Adv recall = 0.2825  |  Drop = +0.6981
+    ε = 0.05  |  Clean recall = 0.9807  Adv recall = 0.0039  |  Drop = +0.9768
+    ε = 0.10  |  Clean recall = 0.9807  Adv recall = 0.0004  |  Drop = +0.9803
+
+
+============================================================
+RECALL DROP SUMMARY
+============================================================
+Label                        Clean  ε=0.01  ε=0.05  ε=0.10
+----------------------------------------------------------
+has_traffic_light           0.9807  +0.6981  +0.9768  +0.9803
+  Saved: D:\ML Safety\ML_Safety\models\ex8_recall_drop.png
+EXIT:0

@@ -261,6 +261,10 @@ def parse_args():
                    help="Use a random subset of N images (None = full test set)")
     p.add_argument("--batch-size", type=int, default=32)
     p.add_argument("--seed",       type=int, default=42)
+    p.add_argument("--labels",     type=str, default=None,
+                   help="Comma-separated subset of TARGET_LABELS to run (default: all)")
+    p.add_argument("--epsilons",   type=str, default=None,
+                   help="Comma-separated subset of epsilon values to run (default: all)")
     return p.parse_args()
 
 
@@ -269,7 +273,11 @@ def main():
     random.seed(args.seed)
     torch.manual_seed(args.seed)
 
-    global DATA_DIR, MODELS_DIR, TEST_DIR
+    global DATA_DIR, MODELS_DIR, TEST_DIR, TARGET_LABELS, EPSILONS
+    if args.labels:
+        TARGET_LABELS = [s.strip() for s in args.labels.split(",")]
+    if args.epsilons:
+        EPSILONS = [float(s.strip()) for s in args.epsilons.split(",")]
     DATA_DIR   = args.data_dir
     MODELS_DIR = args.models_dir
     TEST_DIR   = os.path.join(DATA_DIR, "test", "test")

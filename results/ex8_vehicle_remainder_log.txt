@@ -1,0 +1,29 @@
+Device     : cpu
+Test split : D:\ML Safety\2026\test\test
+Models dir : D:\ML Safety\ML_Safety\models
+
+Using 3,600 test images
+
+============================================================
+Model: has_vehicle
+============================================================
+  Generating adversarial example visualisations ...
+  Saved: D:\ML Safety\ML_Safety\models\ex8_fgsm_has_vehicle.png
+D:\ML Safety\ML_Safety\ex8_fgsm_attack.py:215: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+
+  Recall on positive class (label = 1):
+    ε = 0.05  |  Clean recall = 0.9044  Adv recall = 0.0948  |  Drop = +0.8096
+    ε = 0.10  |  Clean recall = 0.9044  Adv recall = 0.1830  |  Drop = +0.7215
+
+
+============================================================
+RECALL DROP SUMMARY
+============================================================
+Label                        Clean  ε=0.05  ε=0.10
+--------------------------------------------------
+has_vehicle                 0.9044  +0.8096  +0.7215
+  Saved: D:\ML Safety\ML_Safety\models\ex8_recall_drop.png
+D:\ML Safety\ML_Safety\ex8_fgsm_attack.py:249: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+EXIT:0

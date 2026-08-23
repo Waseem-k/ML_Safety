@@ -1,0 +1,56 @@
+{
+  "dimensions": {
+    "pedestrian_present": [
+      false,
+      true
+    ],
+    "traffic_light_present": [
+      false,
+      true
+    ],
+    "vehicle_present": [
+      false,
+      true
+    ],
+    "pedestrian_size": [
+      "absent",
+      "small",
+      "large"
+    ],
+    "vehicle_size": [
+      "absent",
+      "small",
+      "large"
+    ],
+    "steer_regime": [
+      "left",
+      "straight",
+      "right"
+    ],
+    "dynamics_regime": [
+      "braking",
+      "accelerating",
+      "coasting"
+    ]
+  },
+  "results": {
+    "1": {
+      "coverage": 1.0,
+      "covered": 18,
+      "total": 18,
+      "scenes": 3600
+    },
+    "2": {
+      "coverage": 0.9710144927536232,
+      "covered": 134,
+      "total": 138,
+      "scenes": 3600
+    },
+    "3": {
+      "coverage": 0.8852739726027398,
+      "covered": 517,
+      "total": 584,
+      "scenes": 3600
+    }
+  }
+}

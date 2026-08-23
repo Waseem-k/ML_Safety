@@ -1,0 +1,29 @@
+Device     : cpu
+Model      : has_vehicle
+
+  In-dist (test)      : 3,600 images
+  Fog                 : 3,600 images
+  Night               : 3,600 images
+  Town01              : 3,600 images
+
+Loading has_vehicle model ...
+Computing MSP scores ...
+  In-dist (test)      : mean MSP = 0.9446  std = 0.1082
+  Fog                 : mean MSP = 0.9093  std = 0.1110
+  Night               : mean MSP = 0.8687  std = 0.1476
+  Town01              : mean MSP = 0.9092  std = 0.1280
+Saved: D:\ML Safety\ML_Safety\models\ex9_msp_distributions_has_vehicle.png
+
+AUROC per OOD scenario (in-dist vs OOD):
+  Fog                 : AUROC = 0.7247
+  Night               : AUROC = 0.7311
+  Town01              : AUROC = 0.6244
+
+  Combined (all OOD)  : AUROC = 0.6934
+Saved: D:\ML Safety\ML_Safety\models\ex9_msp_roc_curves_has_vehicle.png
+
+Summary:
+  Best separation  : Night (AUROC 0.7311)
+  Worst separation : Town01 (AUROC 0.6244)
+  Combined AUROC   : 0.6934
+EXIT:0

@@ -1,0 +1,71 @@
+{
+  "has_pedestrian": {
+    "label": "has_pedestrian",
+    "n_test": 3600,
+    "n_positive": 706,
+    "precision_neg": 0.8612759643916914,
+    "precision_pos": 0.3672566371681416,
+    "recall_neg": 0.8023496890117484,
+    "recall_pos": 0.4702549575070821,
+    "f1_neg": 0.8307692307692308,
+    "f1_pos": 0.4124223602484472,
+    "confusion_matrix": [
+      [
+        2322,
+        572
+      ],
+      [
+        374,
+        332
+      ]
+    ],
+    "threshold": 0.9,
+    "met": false
+  },
+  "has_traffic_light": {
+    "label": "has_traffic_light",
+    "n_test": 3600,
+    "n_positive": 2584,
+    "precision_neg": 0.9444444444444444,
+    "precision_pos": 0.9385185185185185,
+    "recall_neg": 0.8366141732283464,
+    "recall_pos": 0.9806501547987616,
+    "f1_neg": 0.8872651356993737,
+    "f1_pos": 0.9591218773656321,
+    "confusion_matrix": [
+      [
+        850,
+        166
+      ],
+      [
+        50,
+        2534
+      ]
+    ],
+    "threshold": 0.85,
+    "met": true
+  },
+  "has_vehicle": {
+    "label": "has_vehicle",
+    "n_test": 3600,
+    "n_positive": 2700,
+    "precision_neg": 0.7440476190476191,
+    "precision_pos": 0.9421296296296297,
+    "recall_neg": 0.8333333333333334,
+    "recall_pos": 0.9044444444444445,
+    "f1_neg": 0.7861635220125787,
+    "f1_pos": 0.9229024943310657,
+    "confusion_matrix": [
+      [
+        750,
+        150
+      ],
+      [
+        258,
+        2442
+      ]
+    ],
+    "threshold": 0.85,
+    "met": true
+  }
+}

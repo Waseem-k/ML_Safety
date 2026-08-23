@@ -1,0 +1,29 @@
+Device     : cpu
+Model      : has_traffic_light
+
+  In-dist (test)      : 3,600 images
+  Fog                 : 3,600 images
+  Night               : 3,600 images
+  Town01              : 3,600 images
+
+Loading has_traffic_light model ...
+Computing MSP scores ...
+  In-dist (test)      : mean MSP = 0.9879  std = 0.0544
+  Fog                 : mean MSP = 0.8984  std = 0.1391
+  Night               : mean MSP = 0.9796  std = 0.0577
+  Town01              : mean MSP = 0.9210  std = 0.1276
+Saved: D:\ML Safety\ML_Safety\models\ex9_msp_distributions_has_traffic_light.png
+
+AUROC per OOD scenario (in-dist vs OOD):
+  Fog                 : AUROC = 0.8741
+  Night               : AUROC = 0.6952
+  Town01              : AUROC = 0.8249
+
+  Combined (all OOD)  : AUROC = 0.7981
+Saved: D:\ML Safety\ML_Safety\models\ex9_msp_roc_curves_has_traffic_light.png
+
+Summary:
+  Best separation  : Fog (AUROC 0.8741)
+  Worst separation : Night (AUROC 0.6952)
+  Combined AUROC   : 0.7981
+EXIT:0

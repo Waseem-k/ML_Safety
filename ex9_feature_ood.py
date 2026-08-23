@@ -329,15 +329,19 @@ def parse_args():
     p.add_argument("--train-limit", type=int, default=None,
                    help="Max training samples to use for fitting (None = all). "
                         "Use a smaller number to speed up on large datasets.")
+    p.add_argument("--target-label", default=TARGET_LABEL,
+                   help="Which detector's checkpoint/features to evaluate "
+                        "(has_pedestrian, has_traffic_light, has_vehicle).")
     return p.parse_args()
 
 
 def main():
     args = parse_args()
 
-    global DATA_DIR, MODELS_DIR, TRAIN_DIR, TEST_DIR, FOG_DIR, NIGHT_DIR, TOWN_DIR
-    DATA_DIR   = args.data_dir
-    MODELS_DIR = args.models_dir
+    global DATA_DIR, MODELS_DIR, TRAIN_DIR, TEST_DIR, FOG_DIR, NIGHT_DIR, TOWN_DIR, TARGET_LABEL
+    DATA_DIR    = args.data_dir
+    MODELS_DIR  = args.models_dir
+    TARGET_LABEL = args.target_label
     TRAIN_DIR  = os.path.join(DATA_DIR, "train", "train")
     TEST_DIR   = os.path.join(DATA_DIR, "test",  "test")
     FOG_DIR    = os.path.join(DATA_DIR, "test-fog",     "test-fog")
@@ -414,22 +418,23 @@ def main():
               f"(gap = {gaps[best_gap_scenario]:+.4f})")
 
     # ── 5. Plots ─────────────────────────────────────────────────────────────
+    suffix = "" if TARGET_LABEL == "has_pedestrian" else f"_{TARGET_LABEL}"
     ood_mah = {k: mah_scores[k] for k in auroc_mah}
     ood_msp = {k: msp_scores[k] for k in auroc_msp}
 
     plot_score_comparison(
         in_dist_mah, ood_mah,
         in_dist_msp, ood_msp,
-        save_path=os.path.join(MODELS_DIR, "ex9_feature_distributions.png"),
+        save_path=os.path.join(MODELS_DIR, f"ex9_feature_distributions{suffix}.png"),
     )
     plot_auroc_comparison(
         auroc_msp, auroc_mah,
-        save_path=os.path.join(MODELS_DIR, "ex9_auroc_comparison.png"),
+        save_path=os.path.join(MODELS_DIR, f"ex9_auroc_comparison{suffix}.png"),
     )
     plot_roc_curves_comparison(
         in_dist_mah, in_dist_msp,
         ood_mah, ood_msp,
-        save_path=os.path.join(MODELS_DIR, "ex9_roc_comparison.png"),
+        save_path=os.path.join(MODELS_DIR, f"ex9_roc_comparison{suffix}.png"),
     )
 
 

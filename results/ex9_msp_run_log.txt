@@ -1,0 +1,33 @@
+Device     : cpu
+Model      : has_pedestrian
+
+  In-dist (test)      : 3,600 images
+  Fog                 : 3,600 images
+  Night               : 3,600 images
+  Town01              : 3,600 images
+
+Loading has_pedestrian model ...
+Computing MSP scores ...
+  In-dist (test)      : mean MSP = 0.9020  std = 0.1310
+  Fog                 : mean MSP = 0.9087  std = 0.1302
+  Night               : mean MSP = 0.8623  std = 0.1381
+  Town01              : mean MSP = 0.8878  std = 0.1362
+Saved: D:\ML Safety\ML_Safety\models\ex9_msp_distributions.png
+D:\ML Safety\ML_Safety\ex9_msp_baseline.py:143: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+
+AUROC per OOD scenario (in-dist vs OOD):
+  Fog                 : AUROC = 0.4932
+  Night               : AUROC = 0.6367
+  Town01              : AUROC = 0.5512
+
+  Combined (all OOD)  : AUROC = 0.5603
+Saved: D:\ML Safety\ML_Safety\models\ex9_msp_roc_curves.png
+D:\ML Safety\ML_Safety\ex9_msp_baseline.py:170: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+
+Summary:
+  Best separation  : Night (AUROC 0.6367)
+  Worst separation : Fog (AUROC 0.4932)
+  Combined AUROC   : 0.5603
+EXIT:0

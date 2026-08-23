@@ -1,0 +1,34 @@
+Device     : cpu
+Model      : has_pedestrian
+
+Extracting training features (7,200 images) ...
+  Feature shape: (7200, 512)
+  Class distribution: [5482 1718]
+
+Fitting Mahalanobis detector ...
+  Fitted Mahalanobis detector on 7,200 samples, 2 classes.
+
+Scoring test splits ...
+  In-dist (test)      : Mah mean = 625.89  MSP mean = 0.9020
+  Fog                 : Mah mean = 1544.81  MSP mean = 0.9087
+  Night               : Mah mean = 2166.78  MSP mean = 0.8623
+  Town01              : Mah mean = 820.96  MSP mean = 0.8878
+
+AUROC comparison:
+  Scenario               MSP AUROC   Mah AUROC       Gap
+  -------------------------------------------------------
+  Fog                       0.4932      0.9822   +0.4891
+  Night                     0.6367      0.9995   +0.3628
+  Town01                    0.5512      0.7086   +0.1574
+
+  Largest Mahalanobis improvement: Fog (gap = +0.4891)
+Saved: D:\ML Safety\ML_Safety\models\ex9_feature_distributions.png
+D:\ML Safety\ML_Safety\ex9_feature_ood.py:244: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+Saved: D:\ML Safety\ML_Safety\models\ex9_auroc_comparison.png
+D:\ML Safety\ML_Safety\ex9_feature_ood.py:275: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+Saved: D:\ML Safety\ML_Safety\models\ex9_roc_comparison.png
+D:\ML Safety\ML_Safety\ex9_feature_ood.py:318: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+EXIT:0

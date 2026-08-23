@@ -1,0 +1,18 @@
+Device     : cpu
+Test split : D:\ML Safety\2026\test\test
+Models dir : D:\ML Safety\ML_Safety\models
+
+Using 3,600 test images
+
+============================================================
+Model: has_pedestrian
+============================================================
+  Generating adversarial example visualisations ...
+  Saved: D:\ML Safety\ML_Safety\models\ex8_fgsm_has_pedestrian.png
+D:\ML Safety\ML_Safety\ex8_fgsm_attack.py:215: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+
+  Recall on positive class (label = 1):
+    ε = 0.01  |  Clean recall = 0.4703  Adv recall = 0.0283  |  Drop = +0.4419
+    ε = 0.05  |  Clean recall = 0.4703  Adv recall = 0.0014  |  Drop = +0.4688
+EX8_EXIT:127

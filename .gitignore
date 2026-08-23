@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Course material (lecture slides, exercise sheets, instructor solutions) —
+# not to be redistributed on GitHub; kept locally only.
+*.pdf

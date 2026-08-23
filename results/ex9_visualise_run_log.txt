@@ -1,0 +1,33 @@
+Device    : cpu
+Data dir  : D:\ML Safety\2026
+Models dir: D:\ML Safety\ML_Safety\models
+
+  In-dist (test)      : 3,600 images
+  Fog                 : 3,600 images
+  Night               : 3,600 images
+  Town01              : 3,600 images
+
+Plotting sample images ...
+Saved: D:\ML Safety\ML_Safety\models\ex9_sample_images.png
+D:\ML Safety\ML_Safety\ex9_visualise_shift.py:138: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+
+Loading models ...
+Computing mean softmax confidence (this may take a minute) ...
+
+Mean MSP per model per split:
+                has_pedestrian  has_traffic_light  has_vehicle
+Split                                                         
+In-dist (test)          0.9020             0.9879       0.9446
+Fog                     0.9087             0.8984       0.9093
+Night                   0.8623             0.9796       0.8687
+Town01                  0.8878             0.9210       0.9092
+Saved: D:\ML Safety\ML_Safety\models\ex9_confidence_per_split.png
+D:\ML Safety\ML_Safety\ex9_visualise_shift.py:176: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
+
+Interpretation:
+  Fog       : mean conf = 0.9055 (LOWER than in-dist 0.9448)
+  Night     : mean conf = 0.9035 (LOWER than in-dist 0.9448)
+  Town01    : mean conf = 0.9060 (LOWER than in-dist 0.9448)
+EXIT:0

@@ -178,15 +178,19 @@ def parse_args():
     p.add_argument("--data-dir",   default=DATA_DIR)
     p.add_argument("--models-dir", default=MODELS_DIR)
     p.add_argument("--batch-size", type=int, default=64)
+    p.add_argument("--target-label", default=TARGET_LABEL,
+                   help="Which detector's checkpoint to evaluate "
+                        "(has_pedestrian, has_traffic_light, has_vehicle).")
     return p.parse_args()
 
 
 def main():
     args = parse_args()
 
-    global DATA_DIR, MODELS_DIR, TEST_DIR, FOG_DIR, NIGHT_DIR, TOWN_DIR
-    DATA_DIR   = args.data_dir
-    MODELS_DIR = args.models_dir
+    global DATA_DIR, MODELS_DIR, TEST_DIR, FOG_DIR, NIGHT_DIR, TOWN_DIR, TARGET_LABEL
+    DATA_DIR    = args.data_dir
+    MODELS_DIR  = args.models_dir
+    TARGET_LABEL = args.target_label
     TEST_DIR   = os.path.join(DATA_DIR, "test",  "test")
     FOG_DIR    = os.path.join(DATA_DIR, "test-fog",     "test-fog")
     NIGHT_DIR  = os.path.join(DATA_DIR, "test-night",   "test-night")
@@ -218,9 +222,10 @@ def main():
               f"std = {scores[name].std():.4f}")
 
     # Score distributions plot
+    suffix = "" if TARGET_LABEL == "has_pedestrian" else f"_{TARGET_LABEL}"
     plot_score_distributions(
         scores,
-        save_path=os.path.join(MODELS_DIR, "ex9_msp_distributions.png"),
+        save_path=os.path.join(MODELS_DIR, f"ex9_msp_distributions{suffix}.png"),
     )
 
     # AUROC per OOD scenario
@@ -244,7 +249,7 @@ def main():
         in_dist_scores,
         ood_splits,
         auroc_dict,
-        save_path=os.path.join(MODELS_DIR, "ex9_msp_roc_curves.png"),
+        save_path=os.path.join(MODELS_DIR, f"ex9_msp_roc_curves{suffix}.png"),
     )
 
     # Summary

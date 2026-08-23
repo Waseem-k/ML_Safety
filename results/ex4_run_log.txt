@@ -1,0 +1,49 @@
+Device     : cpu
+Test split : D:\ML Safety\2026\test\test
+Models dir : D:\ML Safety\ML_Safety\models
+
+======================================================================
+Exercise 4.7 — Per-class evaluation
+======================================================================
+
+Evaluating has_pedestrian ...
+  n_test=3600  n_positive=706
+  Precision (pos): 0.3673
+  Recall    (pos): 0.4703   (threshold=0.90, met=False)
+  F1        (pos): 0.4124
+  Confusion matrix [[TN,FP],[FN,TP]]: [[2322, 572], [374, 332]]
+
+Evaluating has_traffic_light ...
+  n_test=3600  n_positive=2584
+  Precision (pos): 0.9385
+  Recall    (pos): 0.9807   (threshold=0.85, met=True)
+  F1        (pos): 0.9591
+  Confusion matrix [[TN,FP],[FN,TP]]: [[850, 166], [50, 2534]]
+
+Evaluating has_vehicle ...
+  n_test=3600  n_positive=2700
+  Precision (pos): 0.9421
+  Recall    (pos): 0.9044   (threshold=0.85, met=True)
+  F1        (pos): 0.9229
+  Confusion matrix [[TN,FP],[FN,TP]]: [[750, 150], [258, 2442]]
+
+======================================================================
+SUMMARY (positive-class recall = safety-relevant metric)
+======================================================================
+Model                  Precision      Recall          F1   Threshold    Met?
+has_pedestrian            0.3673      0.4703      0.4124        0.90   False
+has_traffic_light         0.9385      0.9807      0.9591        0.85    True
+has_vehicle               0.9421      0.9044      0.9229        0.85    True
+
+======================================================================
+Exercise 4.5 — k-projection ODD coverage
+======================================================================
+Scenarios: 3600
+k        Coverage     Covered       Total
+1          1.0000          18          18
+2          0.9710         134         138
+3          0.8853         517         584
+
+Saved: D:\ML Safety\ML_Safety\results\ex4_per_class_metrics.json
+Saved: D:\ML Safety\ML_Safety\results\ex4_kprojection_coverage.json
+Saved: D:\ML Safety\ML_Safety\models\ex4_confusion_<label>.png (x3)

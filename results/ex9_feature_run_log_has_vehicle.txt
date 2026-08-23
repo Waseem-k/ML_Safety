@@ -1,0 +1,28 @@
+Device     : cpu
+Model      : has_vehicle
+
+Extracting training features (7,200 images) ...
+  Feature shape: (7200, 512)
+  Class distribution: [1742 5458]
+
+Fitting Mahalanobis detector ...
+  Fitted Mahalanobis detector on 7,200 samples, 2 classes.
+
+Scoring test splits ...
+  In-dist (test)      : Mah mean = 545.13  MSP mean = 0.9446
+  Fog                 : Mah mean = 1414.72  MSP mean = 0.9093
+  Night               : Mah mean = 2030.66  MSP mean = 0.8687
+  Town01              : Mah mean = 734.22  MSP mean = 0.9092
+
+AUROC comparison:
+  Scenario               MSP AUROC   Mah AUROC       Gap
+  -------------------------------------------------------
+  Fog                       0.7247      0.9632   +0.2385
+  Night                     0.7311      0.9934   +0.2623
+  Town01                    0.6244      0.7005   +0.0762
+
+  Largest Mahalanobis improvement: Night (gap = +0.2623)
+Saved: D:\ML Safety\ML_Safety\models\ex9_feature_distributions_has_vehicle.png
+Saved: D:\ML Safety\ML_Safety\models\ex9_auroc_comparison_has_vehicle.png
+Saved: D:\ML Safety\ML_Safety\models\ex9_roc_comparison_has_vehicle.png
+EXIT:0
